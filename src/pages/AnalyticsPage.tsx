@@ -298,3 +298,23 @@ const AnalyticsPage: React.FC = () => {
                 Consider reallocating resources
               </p>
             </div>
+
+            <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <div className="flex items-center">
+                <Target className="h-5 w-5 text-blue-600 mr-2" />
+                <span className="font-medium text-blue-800 dark:text-blue-300">
+                  High-priority tasks on track
+                </span>
+              </div>
+              <p className="text-sm text-blue-700 dark:text-blue-400 mt-1">
+                Critical deliverables are progressing well
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AnalyticsPage;
