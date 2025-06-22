@@ -49,6 +49,26 @@ const Dashboard: React.FC = () => {
     ],
   };
 
+  const taskStatusData = {
+    labels: ['To Do', 'In Progress', 'Review', 'Done'],
+    datasets: [
+      {
+        data: [
+          projects.reduce((sum, p) => sum + p.tasks.filter(t => t.status === 'todo').length, 0),
+          projects.reduce((sum, p) => sum + p.tasks.filter(t => t.status === 'in-progress').length, 0),
+          projects.reduce((sum, p) => sum + p.tasks.filter(t => t.status === 'review').length, 0),
+          projects.reduce((sum, p) => sum + p.tasks.filter(t => t.status === 'done').length, 0),
+        ],
+        backgroundColor: [
+          '#94a3b8',
+          '#f59e0b',
+          '#8b5cf6',
+          '#10b981',
+        ],
+        borderWidth: 0,
+      },
+    ],
+  };
 
   const upcomingTasks = projects
     .flatMap(project => project.tasks.map(task => ({ ...task, projectName: project.name })))
